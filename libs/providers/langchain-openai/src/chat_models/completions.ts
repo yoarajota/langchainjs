@@ -352,7 +352,7 @@ export class ChatOpenAICompletions<
     };
 
     const streamIterable = await this.completionWithRetry(params, options);
-    const shouldStreamUsage = this.streamUsage ?? options.streamUsage;
+    const shouldStreamUsage = this.streamUsage;
 
     const abortableStream = async function* (
       source: AsyncIterable<OpenAIClient.Chat.Completions.ChatCompletionChunk>,
